@@ -14,30 +14,30 @@ export default class LoadingScene extends Phaser.Scene {
 
         // Crear la imagen de carga en el DOM
         let loadingImg = document.createElement("img");
-        loadingImg.src = "../assets/loading.png"; // Ruta de la imagen
+        loadingImg.src = "../assets/loading.png"; 
         loadingImg.style.position = "absolute";
         loadingImg.style.top = "40%";
         loadingImg.style.left = "50%";
         loadingImg.style.transform = "translate(-50%, -50%)";
-        loadingImg.style.width = "800px"; // Ajusta el tamaño
+        loadingImg.style.width = "800px"; 
         loadingImg.style.height = "auto";
         loadingImg.id = "loadingScreen";
 
-        // Agregar la imagen al `body`
+
         document.body.appendChild(loadingImg);
 
-        // Esperar 3 segundos y luego cambiar a la siguiente escena
+      
         setTimeout(() => {
-            // Remover la imagen del DOM
+   
             if (document.getElementById("loadingScreen")) {
                 document.body.removeChild(document.getElementById("loadingScreen"));
             }
 
-            // Mostrar de nuevo el canvas de Phaser
+   
             document.getElementById("container").style.display = "block";
 
 
-            // Cambiar a la escena del juego
+            
             this.scene.start("Secondscene", { score: this.score, lives: this.lives }); 
             
         }, 3000);
