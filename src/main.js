@@ -19,15 +19,7 @@ const config = {
             debug: false
         }
     },
-    /* type: Phaser.AUTO,
-    width: 1024,
-    height: 768,
-    backgroundColor: '#000',
-    parent: "container",
-    physics: {
-        default: 'arcade',
-        arcade: { debug: false }
-    }, */
+ 
     scene: [Firstscene, Secondscene,PauseScene, LoadingScene, GameoverScene, WinScene] // Mantener solo `Secondscene`
 
 };
