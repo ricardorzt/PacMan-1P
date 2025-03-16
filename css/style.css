@@ -1,0 +1,21 @@
+
+
+body {
+    margin: 0;
+    background-color: #060707;
+    
+}
+
+canvas{
+    display : block;   
+    margin : auto;
+}
+
+#scoreText {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+.container{
+    display: none;
+}

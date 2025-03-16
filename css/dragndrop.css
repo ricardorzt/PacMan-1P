@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --bg-color: black;
+    --accent-color: yellow;
+    --font-family: 'Press Start 2P', cursive;
+    --btn-bg: black;
+    --btn-border: 4px solid yellow;
+    --btn-hover-bg: yellow;
+    --btn-hover-color: black;
+    --shadow: 0 0 10px yellow;
+    --font-size-large: 25px;
+    --font-size-small: 15px;
+    --area-bg: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.drag-drop-area {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 400px;
+    display: flex;
+    font-size: var(--font-size-large);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: var(--area-bg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 2;
+}
+
+.drag-drop-area p {
+    font-size: var(--font-size-small);
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.drag-drop-images {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 600px;
+}
+
+.drag-drop-images img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.drag-drop-images img:hover {
+    transform: scale(1.1);
+}
+
+.drag-drop-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+
+.drop-zone {
+    width: 300px;
+    height: 100px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    font-family: var(--font-family);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#draggedImage {
+    max-width: 80px;
+    max-height: 100%;
+    object-fit: contain;
+    margin-top: 10px;
+    display: block;
+    z-index: 10; 
+}
+.drag-drop-area button {
+    background: var(--btn-bg);
+    border: var(--btn-border);
+    color: var(--accent-color);
+    font-size: var(--font-size-small);
+    padding: 15px 30px;
+    margin: 15px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s, background 0.3s, box-shadow 0.3s;
+}
+
+.drag-drop-area button:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-color);
+    box-shadow: 0 0 20px var(--accent-color);
+    transform: scale(1.1);
+}
+
+.drag-drop-area button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px var(--accent-color);
+}
+
+h1 {
+    
+    margin-top: 4%;
+    font-size: var(--font-size-large);
+    font-family: var(--font-family);
+    font-weight: bold;
+    text-transform: uppercase;
+}

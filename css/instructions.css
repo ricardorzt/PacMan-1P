@@ -1,0 +1,65 @@
+.instructions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto; /* Permite desplazarse si hay muchas instrucciones */
+}
+
+.instructions-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px; /* Espacio entre niveles */
+}
+
+.instructions-image img {
+    width: 250px;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 30%;
+}
+
+/* Botones */
+.instructions-section button {
+    background: black;
+    border: 4px solid yellow;
+    color: yellow;
+    font-size: 15px;
+    padding: 15px 30px;
+    margin: 15px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px yellow;
+    transition: transform 0.1s, background 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto Hover del Botón */
+.instructions-section button:hover {
+    background: yellow;
+    color: black;
+    box-shadow: 0 0 20px yellow;
+    transform: scale(1.1);
+}
+
+/* Títulos de Niveles */
+h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

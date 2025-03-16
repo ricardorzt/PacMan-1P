@@ -1,0 +1,64 @@
+.score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.score-table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    background: black;
+    border: 4px solid yellow;
+    color: yellow;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+}
+
+.score-table th, .score-table td {
+    border: 2px solid yellow;
+    padding: 10px;
+    text-align: center;
+}
+
+.score-table th {
+    background-color: yellow;
+    color: black;
+}
+
+.score-section button {
+    background: black;
+    border: 4px solid yellow;
+    color: yellow;
+    font-size: 15px;
+    padding: 15px 30px;
+    margin: 15px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px yellow;
+    transition: transform 0.1s, background 0.3s, box-shadow 0.3s;
+}
+
+.score-section button:hover {
+    background: yellow;
+    color: black;
+    box-shadow: 0 0 20px yellow;
+    transform: scale(1.1);
+}

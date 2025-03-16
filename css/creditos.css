@@ -1,0 +1,69 @@
+
+.credits-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+}
+#gameCanvas {
+    position: absolute; /* Asegura que el canvas no se mueva inesperadamente */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Si hay otros elementos encima, el canvas se mantiene atrás */
+}
+.hidden {
+    display: none;
+}
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.team-member img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 30%;
+}   
+
+.credits-footer {
+    margin-top: 20px;
+}
+.credits-section button{
+    
+background: black;
+border: 4px solid yellow;
+color: yellow;
+font-size: 15px;
+padding: 15px 30px;
+margin: 15px;
+cursor: pointer;
+font-family: 'Press Start 2P', cursive;
+text-transform: uppercase;
+letter-spacing: 2px;
+box-shadow: 0 0 10px yellow;
+transition: transform 0.1s, background 0.3s, box-shadow 0.3s;
+}
+
+.credits-section button:hover{
+    
+    background: yellow;
+    color: black;
+    box-shadow: 0 0 20px yellow;
+    transform: scale(1.1);
+}
+
