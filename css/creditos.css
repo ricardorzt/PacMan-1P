@@ -16,12 +16,12 @@
     z-index: 1000;
 }
 #gameCanvas {
-    position: absolute; /* Asegura que el canvas no se mueva inesperadamente */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Si hay otros elementos encima, el canvas se mantiene atrás */
+    z-index: 0;
 }
 .hidden {
     display: none;
