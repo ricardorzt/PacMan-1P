@@ -8,7 +8,7 @@ export default class Ghost extends Phaser.Physics.Arcade.Sprite {
         const randomGhost = Phaser.Math.RND.pick(ghostColors); // Selecciona un color al azar
         const x = 15; // Posición inicial aleatoria dentro del rango de la pista
 
-        super(scene, x, track.y, randomGhost); // ✅ Usa la imagen correcta del fantasma
+        super(scene, x, track.y, randomGhost); // 
 
         this.setOrigin(0.5, 1);
 
@@ -243,7 +243,7 @@ export default class Ghost extends Phaser.Physics.Arcade.Sprite {
                 
                 secondScene.scoreText.setText("Score: " + secondScene.score);
                 if (secondScene.lives >= 0 && secondScene.lives < secondScene.displayLives.length) {
-                    secondScene.displayLives[secondScene.lives].destroy();  // Asegúrate de que el índice sea válido
+                    secondScene.displayLives[secondScene.lives].destroy();  
                 }
             } else {
                 secondScene.lives--;
@@ -263,7 +263,7 @@ export default class Ghost extends Phaser.Physics.Arcade.Sprite {
                 
                 secondScene.scoreText.setText("Score: " + secondScene.score);
                 if (secondScene.lives >= 0 && secondScene.lives < secondScene.displayLives.length) {
-                    secondScene.displayLives[secondScene.lives].destroy();  // Asegúrate de que el índice sea válido
+                    secondScene.displayLives[secondScene.lives].destroy();  
                 }
                 secondScene.gameOver();
             }
