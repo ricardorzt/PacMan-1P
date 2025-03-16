@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PACMAN JUMP</title>
+    
+    <!-- <link rel="stylesheet" href="css/variables.css"> -->
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/instructions.css">
+    <link rel="stylesheet" href="css/dragndrop.css">
+    <link rel="stylesheet" href="css/creditos.css"> 
+    <link rel="stylesheet" href="css/score.css">
+    
+    <!-- <link rel="stylesheet" href="instructions.css"> -->
+    <script defer src="js/menu.js"></script>
+    <script defer src="js/dnd.js"></script>
+    <script defer src="js/score.js"></script>
+    <script defer src="js/creditos.js"></script> 
+    <script defer src="js/instructions.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <div id="container2">
+        <canvas id="gameCanvas"></canvas>
+        <div class="menu" id="menu">
+            <img src="assets/pacmanMenu.png" alt="Pac-Man Logo" class="logo">
+            <input type="text" id="playerName" placeholder="Enter Name" maxlength="10">
+            <select id="existingNames" style="display:none;">
+                <option value="">Select an already registered player</option>
+            </select>
+            <button onclick="startGame()">Start</button>
+            <button onclick="showScore()">Score</button>
+            
+            <button onclick="showInstructions()">Instructions</button>
+            <button onclick="showCredits()">Credits</button>
+            <button onclick="exitGame()">Exit</button>
+       
+        </div>
+    
+        <div id="alerta" class="alerta" style="display: none;">
+            <div class="alerta-box">
+                <p id="alertMessage">Please enter a name!</p>
+                <button onclick="closeAlert()">Accept</button>
+            </div>
+        </div>
+        <div class="drag-drop-area" id="dragDropArea" ondrop="drop(event)" ondragover="allowDrop(event)" style="display: none;">
+            <h1>Choose your character</h1>
+            <div class="drag-drop-content">
+                <div class="drag-drop-images">
+                    <img src="assets/mspacman.png" alt="Character 1" id="ms-pacman-full.png" draggable="true" ondragstart="drag(event)">
+                    <img src="assets/pacman-yahir.png" alt="Character 2" id="pacman-full.png" draggable="true" ondragstart="drag(event)">
+                </div>
+            </div>
+            <div class="drop-zone">
+                <p>Drag your character here</p>
+            </div>
+            <button onclick="selectPlayer()">Select Character</button>
+            <button onclick="goBackToMenu()">Back to Menu</button>
+        <!-- Selected image -->
+        <img id="draggedImage" src="" style="display:none;" alt="Selected Image">
+                
+            <div id="alerta" class="alerta" style="display: none;">
+                <div class="alerta-box">
+                    <p id="alertMessage">Please choose a character!</p>
+                    <button onclick="closeAlert()">Accept</button>
+                </div>
+            </div>
+        </div>
+                <!-- Instructions Section -->
+    
+        <div id="instructionsContainer" class="instructions-container" style="display: block;">
+            
+            <!-- Level 1 -->
+            <div class="instructions-section">
+                <h2>Level 1</h2>
+                <img src="assets/nivel-1-instrucciones.png" alt="Instructions Level 1" class="instructions-image">
+                
+            </div>
+    
+            <!-- Level 2 -->
+            <div class="instructions-section">
+                <h2>Level 2</h2>
+                <img src="assets/nivel-2-i.png" alt="Instructions Level 2" class="instructions-image">
+                <button onclick="closeInstructions()">Back to Menu</button>
+            </div>
+    
+        </div>
+    
+        
+        <!-- Score Section -->
+        <div id="scoreSection" class="credits-section hidden">
+            <h2>Scoreboard</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="scoreTableBody"></tbody>
+            </table>
+            <button onclick="closeScore()">Back to Menu</button>
+        </div>
+    
+            
+        <!-- Credits Section -->
+        <div id="creditsSection" class="credits-section" style="display: none;">
+            <h2>Team Members</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="assets/esteban.jpeg" alt="Team Member 1">
+                    <p>Angel Esteban Esparza Muñoz</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/ricardo.jpg" alt="Team Member 2">
+                    <p>Ricardo Ramirez Torres</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/yahir.jpg" alt="Team Member 3">
+                    <p>Yahir Eduardo Tostado Nieto</p>
+                </div>
+            </div>
+            <p class="credits-footer">Web Technologies 6-A</p>
+            <p class="credits-footer">March 15, 2025</p>
+            <button onclick="closeCredits()">Back to Menu</button>
+        </div>
+    
+    </div>
+    
+</body>
+</html>
