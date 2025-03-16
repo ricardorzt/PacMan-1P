@@ -16,12 +16,12 @@ export default class GameoverScene extends Phaser.Scene {
 
         // Crear la imagen de Game Over usando DOM
         let gameOverImg = document.createElement("img");
-        gameOverImg.src = "../assets/game-over.png"; // Ruta de la imagen
+        gameOverImg.src = "../assets/game-over.png";
         gameOverImg.style.position = "absolute";
         gameOverImg.style.top = "40%";
         gameOverImg.style.left = "50%";
         gameOverImg.style.transform = "translate(-50%, -50%)";
-        gameOverImg.style.width = "800px"; // Ajusta el tamaño si es necesario
+        gameOverImg.style.width = "800px"; 
         gameOverImg.style.height = "auto";
         gameOverImg.id = "gameOverScreen";
         
@@ -57,7 +57,6 @@ export default class GameoverScene extends Phaser.Scene {
             // Mostrar de nuevo el contenedor principal del juego
             document.getElementById("container").style.display = "block";
 
-            //this.scene.start("Firstscene");
             window.location.href = "../index.html";
 
             this.scene.stop();
@@ -66,8 +65,8 @@ export default class GameoverScene extends Phaser.Scene {
 
     saveScore() {
         // Obtener el jugador actual y su puntuación
-        const currentPlayerName = localStorage.getItem("currentPlayer");  // Esto debe ser un string, solo el nombre
-        const currentScore = this.scoreFinal; // Supón que tienes una forma de obtener el puntaje actual
+        const currentPlayerName = localStorage.getItem("currentPlayer"); 
+        const currentScore = this.scoreFinal; 
     
         if (!currentPlayerName) {
             console.error("No hay un jugador seleccionado.");
@@ -79,29 +78,29 @@ export default class GameoverScene extends Phaser.Scene {
     
         // Función para formatear la fecha en formato dd-mm-yyyy
         function formatDate(date) {
-            const day = ("0" + date.getDate()).slice(-2); // Asegura que el día tenga dos dígitos
-            const month = ("0" + (date.getMonth() + 1)).slice(-2); // Asegura que el mes tenga dos dígitos
-            const year = date.getFullYear(); // Año en formato de 4 dígitos
-            return `${day}-${month}-${year}`; // Retorna la fecha en formato dd-mm-yyyy
+            const day = ("0" + date.getDate()).slice(-2);
+            const month = ("0" + (date.getMonth() + 1)).slice(-2); 
+            const year = date.getFullYear(); 
+            return `${day}-${month}-${year}`;
         }
     
-        // Comprobar si el jugador ya existe en el localStorage
+      
         if (players[currentPlayerName]) {
-            // Si existe, comparar la puntuación actual con la puntuación almacenada
+  
             if (currentScore >= players[currentPlayerName].score) {
                 // Si la nueva puntuación es mayor, actualizarla
                 players[currentPlayerName].score = currentScore;
-                players[currentPlayerName].date = formatDate(new Date()); // Actualizar la fecha sin la hora
+                players[currentPlayerName].date = formatDate(new Date());
             }
         } else {
-            // Si el jugador no existe, crear un nuevo jugador con la puntuación y la fecha actual
+            
             players[currentPlayerName] = {
                 score: currentScore,
-                date: formatDate(new Date()) // Guardamos la fecha sin la hora
+                date: formatDate(new Date()) 
             };
         }
     
-        // Guardar el array de jugadores actualizado en localStorage
+       
         localStorage.setItem("players", JSON.stringify(players));
     }
 }    
