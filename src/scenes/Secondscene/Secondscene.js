@@ -84,7 +84,7 @@ export default class Secondscene extends Phaser.Scene {
     create() {
 
         this.timer = 0;
-        this.isPaused = false; // Estado de pausa
+        this.isPaused = false; 
         this.isMusicPlaying = false; 
         this.gameStarted = false;
 
@@ -125,17 +125,13 @@ export default class Secondscene extends Phaser.Scene {
         // Crear el jugador (Pac-Man)
         this.player = new Player(this, this.tracks[0]);
 
-        // UI
-        //this.add.image(0, 0, 'overlay').setOrigin(0);
-        //this.add.image(16, 0, 'sprites', 'panel-score').setOrigin(0);
-        //this.add.image(1024 - 16, 0, 'sprites', 'panel-best').setOrigin(1, 0);
-
+  
           
         this.displayLives = [];
 
         // Crear solo las vidas que quedan
         for (let i = 0; i < this.lives; i++) {
-            // Aquí, 870, 900, 930 son las posiciones en x, ajusta la distancia entre las vidas
+           
             let vida = this.add.image(870 + (i * 30), 55, 'livesIcon');
             this.displayLives.push(vida);  // Agrega cada vida a la lista
         }
@@ -172,7 +168,7 @@ export default class Secondscene extends Phaser.Scene {
         if (this.gameStarted) return; // Si ya inició, no hacer nada
 
         this.gameStarted = true;
-        this.startText.destroy(); // Ocultar el mensaje de inicio
+        this.startText.destroy(); 
         
 
         this.loopSound.play(); 
@@ -239,14 +235,7 @@ export default class Secondscene extends Phaser.Scene {
 
     win(){
 
-        /*this.time.delayedCall(3000, () => {
-                // Detener todas las pistas (y por lo tanto, los fantasmas)
-            
-            });
-
-            this.tracks.forEach((track) => {
-                track.stop();
-            });*/
+     
 
             // Detener sonidos
             this.loopSound.pause();
@@ -273,7 +262,7 @@ export default class Secondscene extends Phaser.Scene {
 
     gameOver() {
 
-        //this.add.image(512, 384, 'gameover').setOrigin(0.5, 0.5);
+        
 
         this.tweens.add({
             targets: this.infoPanel,
