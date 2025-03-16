@@ -1,6 +1,6 @@
 export default class EnemyPellet extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y) {
-        super(scene, x, y, 'enemy-pellet'); // Ahora usa el nuevo sprite
+        super(scene, x, y, 'enemy-pellet'); 
 
         this.setScale(0.5);
     }
@@ -52,7 +52,7 @@ export default class EnemyPellet extends Phaser.Physics.Arcade.Sprite {
                  
                 secondScene.timerText.setText("Time: " + secondScene.timer);
                 if (secondScene.lives >= 0 && secondScene.lives < secondScene.displayLives.length) {
-                    secondScene.displayLives[secondScene.lives].destroy();  // Asegúrate de que el índice sea válido
+                    secondScene.displayLives[secondScene.lives].destroy(); 
                 }
                 } else {
                 secondScene.lives--;
@@ -72,7 +72,7 @@ export default class EnemyPellet extends Phaser.Physics.Arcade.Sprite {
                 secondScene.timerText.setText("Time: " + secondScene.timer);
                 secondScene.scoreText.setText("Score: " + secondScene.score);
                 if (secondScene.lives >= 0 && secondScene.lives < secondScene.displayLives.length) {
-                    secondScene.displayLives[secondScene.lives].destroy();  // Asegúrate de que el índice sea válido
+                    secondScene.displayLives[secondScene.lives].destroy(); 
                 }
                 secondScene.gameOver();
             }
