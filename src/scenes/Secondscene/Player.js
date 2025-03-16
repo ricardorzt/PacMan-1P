@@ -91,7 +91,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
             this.play('idle'); // Vuelve al frame normal después de lanzar
         });
 
-        // ✅ Disparar proyectil
+
         this.currentTrack.throwPlayerProjectile(this.x);
     }
 
