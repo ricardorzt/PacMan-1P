@@ -199,8 +199,8 @@ class Firstscene extends Phaser.Scene {
         this.startText.destroy(); // Ocultar el mensaje de inicio
         
 
-        this.loopSound.play(); // Cuando termine el sonido de inicio, iniciar la música de fondo
-        //this.win();
+        this.loopSound.play();
+  
     }
 
 
