@@ -13,7 +13,7 @@
     color: white;
     padding: 20px;
     z-index: 1000;
-    overflow-y: auto; /* Permite desplazarse si hay muchas instrucciones */
+    overflow-y: auto; 
 }
 
 .instructions-section {
@@ -32,7 +32,6 @@
     border-radius: 30%;
 }
 
-/* Botones */
 .instructions-section button {
     background: black;
     border: 4px solid yellow;
@@ -48,7 +47,6 @@
     transition: transform 0.1s, background 0.3s, box-shadow 0.3s;
 }
 
-/* Efecto Hover del Botón */
 .instructions-section button:hover {
     background: yellow;
     color: black;
@@ -56,7 +54,6 @@
     transform: scale(1.1);
 }
 
-/* Títulos de Niveles */
 h2 {
     margin-top: 10px;
     font-size: 24px;
