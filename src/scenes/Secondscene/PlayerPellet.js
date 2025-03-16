@@ -1,6 +1,6 @@
 export default class PlayerPellet extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y) {
-        super(scene, x, y, 'pellet'); // Ahora usa el sprite de pellet del jugador
+        super(scene, x, y, 'pellet'); 
 
         this.setScale(0.5);
     }
@@ -27,8 +27,7 @@ export default class PlayerPellet extends Phaser.Physics.Arcade.Sprite {
     preUpdate(time, delta) {
         super.preUpdate(time, delta);
 
-        // Si el proyectil sale de la pantalla, lo desactiva
-        if (this.x <= -64) { // Cambiado para que desaparezca al llegar al borde derecho
+        if (this.x <= -64) { 
             this.stop();
         }
     }
