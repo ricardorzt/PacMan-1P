@@ -11,7 +11,6 @@ export default class Track {
         this.cherry = scene.physics.add.image(1024, trackY - 10, 'cherry').setOrigin(1, 1);
    
 
-        // ✅ Grupos de proyectiles
         this.playerProjectiles = scene.physics.add.group({
             frameQuantity: 8,
             key: 'sprites',
@@ -30,7 +29,7 @@ export default class Track {
             classType: EnemyPellet 
         });
 
-        // ✅ Colisiones
+   
         this.projectileCollider = scene.physics.add.overlap(this.playerProjectiles, this.enemyProjectiles, this.hitProjectile, null, this);
       
 
@@ -44,7 +43,6 @@ export default class Track {
         this.releaseTimer1 = this.scene.time.addEvent({
             delay: delay1,
             callback: () => {
-                console.log("👻 Creando y activando primer fantasma en pista", this.id);
                 
 
                 this.ghost1 = new Ghost(this.scene, this);
